@@ -31,6 +31,7 @@ const UserSchema = new Schema(
         type: [String],
       },
     },
+    { timestamps: true }
   );
   
 const User = models.User || model("User", UserSchema);
