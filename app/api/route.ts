@@ -1,7 +1,6 @@
 import { connectToDatabase } from "@/lib/mongodb";
 import User from "@/models/user";
 import { IUser } from "@/types";
-import { hash } from "bcryptjs";
 import mongoose from "mongoose";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -19,11 +18,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         } else {
             if (password.length < 6) return res.status(400).json({ error: 'Password must be at least 6 characters' });
                     
-            const hashedPassword = await hash(password, 12);
             
             User.create({
                 email,
-                password: hashedPassword,
                 ...rest,
             }, (error: unknown, data: IUser) => {
                 if (error && error instanceof mongoose.Error.ValidationError) {
