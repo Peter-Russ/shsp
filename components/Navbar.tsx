@@ -6,7 +6,18 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-    const isUserLoggedIn = true;
+    const isUserLoggedIn = false;
+
+    const [providers, setProviders] = useState(null);
+
+    useEffect(() => {
+        const setProviders = async () => {
+            const response = await getProviders();
+            setProviders(response);
+        }
+        setProviders();
+    }, []);
+
 
   return (
     <nav>
@@ -19,6 +30,13 @@ const Navbar = () => {
             </>
         ): (
         <>
+            {providers && Object.values(providers).map((provider: any) => (
+                    <button 
+                        key={provider.name}
+                        onClick={() => signIn(provider.id)}>
+                        Sign In
+                    </button>
+            ))}
         </>
         )}
     </nav>
