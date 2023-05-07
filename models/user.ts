@@ -2,7 +2,7 @@ import { Schema, model, models } from 'mongoose';
 
 const UserSchema = new Schema(
     {
-      userName: {
+      name: {
         type: String,
         required: [true, "Username is required"],
         minLenght: [4, "Username must be at least 4 characters"],
@@ -14,7 +14,7 @@ const UserSchema = new Schema(
         required: [true, "Email is required"],
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "Invalid email"]
       },
-      password: {
+      hashedPassword: {
         // no length defined becouse we will hash the password
         type: String,
         required: [true, "Password is required"],
@@ -34,6 +34,7 @@ const UserSchema = new Schema(
     { timestamps: true }
   );
   
+// checks if model is already created 
 const User = models.User || model("User", UserSchema);
 
 export default User;
