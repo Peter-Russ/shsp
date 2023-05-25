@@ -7,7 +7,7 @@ interface RequestBody {
     password: string;
 }
 
-export async function Post(request: Request) {
+export async function POST(request: Request) {
 
     const body: RequestBody = await request.json();
 
@@ -18,11 +18,11 @@ export async function Post(request: Request) {
     });
 
     if (user && (await bcrypt.compare(body.password, user.password))) {
-        return {
-            status: 200,
-            body: {
-                user: user
-            }
-        }
+       
+        const {password, ...userWithoutPassword} = user;
+        return new Response(JSON.stringify(userWithoutPassword));
+    } else {
+        return new Response(JSON.stringify({error: "User or password incorrect"}));
     }
+    
 } 
