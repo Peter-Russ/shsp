@@ -32,4 +32,5 @@ model User {
 
     userIds         String[] @db.ObjectId
     users           User[] @relation(fields: [userIds], references: [id])
+    // comments array , likes array , etc...
 }

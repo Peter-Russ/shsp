@@ -1,9 +1,9 @@
-import prisma from "@lib/prismadb"
-import * as bcrypt from "bcrypt"
+import prisma from "@/lib/prismadb";
+import * as bcrypt from "bcrypt";
 
 interface RequestBody {
     email: string;
-    password: string;
+    password: string | Buffer;
 }
 
 export async function POST(request: Request) {
@@ -12,17 +12,17 @@ export async function POST(request: Request) {
 
     const user = await prisma.user.findUnique({
         where: {
-            email: body.email
-        }
+            email: body.email,
+        },
     });
 
-    if (user && (await bcrypt.compare(body.password, user.password!))) {
+    if (user && (await bcrypt.compare(body.password, user.password))) {
        
         const {password, ...userWithoutPassword} = user;
         return new Response(JSON.stringify(userWithoutPassword));
 
     } else {
-        return new Response(JSON.stringify({error: "User or password incorrect"}));
+        return new Response(JSON.stringify(null));
     }
     
 } 
