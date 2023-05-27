@@ -11,16 +11,16 @@ model User {
   id                String @id @default(auto()) @map("_id") @db.ObjectId
   name              String
   email             String @unique 
-  emailVerified     DateTime?
-  image             String?
-  password          String?
-  img               String?
-  subscribers       String[]
-  subscribersUsers  String[]
+  emailVerified     Boolean @default(false)
+  image             String? 
+  password          String
+  blocked           Boolean @default(false)
+  subscribers       String[] @default([])
+  subscribersUsers  String[] @default([])
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
 
-  videoIds          String[] @db.ObjectId
+  videoIds          String[] @default([]) @db.ObjectId 
   videos            Video[] @relation(fields: [videoIds], references: [id])
 }
 

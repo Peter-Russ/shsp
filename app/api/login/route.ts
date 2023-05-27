@@ -2,7 +2,6 @@ import prisma from "@lib/prismadb"
 import * as bcrypt from "bcrypt"
 
 interface RequestBody {
-    name: string;
     email: string;
     password: string;
 }
@@ -17,10 +16,11 @@ export async function POST(request: Request) {
         }
     });
 
-    if (user && (await bcrypt.compare(body.password, user.password))) {
+    if (user && (await bcrypt.compare(body.password, user.password!))) {
        
         const {password, ...userWithoutPassword} = user;
         return new Response(JSON.stringify(userWithoutPassword));
+
     } else {
         return new Response(JSON.stringify({error: "User or password incorrect"}));
     }
