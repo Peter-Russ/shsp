@@ -16,6 +16,7 @@
     margin: 0.4rem;
     padding: 0.4rem;
     box-shadow: none;
+    cursor: pointer;
 }
 
 .registerButton {
@@ -31,5 +32,6 @@
     margin: 0.4rem;
     padding: 0.4rem;
     box-shadow: none;
+    cursor: pointer;
 }
 

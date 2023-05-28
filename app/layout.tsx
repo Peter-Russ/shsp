@@ -24,14 +24,6 @@ export default function RootLayout({
           <main>
             <Sidebar/>
             {children}
-            <Navbar />
-            <Navbar />
-            <Navbar />
-            <Navbar />
-            <Navbar />
-            <Navbar />
-            <Navbar />
-            <Navbar />
           </main>
         </Provider>
       </body>
