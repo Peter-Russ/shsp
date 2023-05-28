@@ -6,7 +6,8 @@ import React from "react";
 const LoginButton = () => {
 
   const { data: session } = useSession();
-  console.log(session?.user);
+
+  console.log(session?.user)
 
   if (session && session.user) {
     return (

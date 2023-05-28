@@ -15,22 +15,27 @@ model User {
   image             String? 
   password          String
   blocked           Boolean @default(false)
-  subscribers       String[] @default([])
-  subscribersUsers  String[] @default([])
+  subscribers       String[] @default([]) @db.ObjectId
+  subscribersUsers  String[] @default([]) @db.ObjectId
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
 
-  videoIds          String[] @default([]) @db.ObjectId 
-  videos            Video[] @relation(fields: [videoIds], references: [id])
+  videoIds          Video[] 
 }
 
-  model Video {
-    id              String @id @default(auto()) @map("_id") @db.ObjectId
-    name            String
-    tags            String[]
-    description     String    
+model Video {
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  title           String? @default("")
+  tags            String[]
+  description     String? @default("")
+  image           String?
+  likedIds        String[] @db.ObjectId   
+  dislikedIds     String[] @db.ObjectId    
+  blocked         Boolean @default(false)
+  uploadedAt      DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 
-    userIds         String[] @db.ObjectId
-    users           User[] @relation(fields: [userIds], references: [id])
-    // comments array , likes array , etc...
+  userId          String @db.ObjectId
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // comments array 
 }
