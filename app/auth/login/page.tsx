@@ -22,7 +22,6 @@ const LoginPage = () => {
             <input type="email" onChange={(e) => email.current = e.target.value} />
             <input type="password" onChange={(e) => password.current = e.target.value}/>
             <button type="submit" onClick={onSubmit}>Login</button>
-
         </div>
     )
 }

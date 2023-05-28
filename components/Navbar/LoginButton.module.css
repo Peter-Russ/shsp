@@ -1,0 +1,35 @@
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.loginButton {
+    width: 5rem;
+    height: 2rem;
+    color: var(--text-main-color);
+    background-color: transparent;
+    border: 1px solid var(--blue-theme);
+    border-radius: 3px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 0.4rem;
+    padding: 0.4rem;
+    box-shadow: none;
+}
+
+.registerButton {
+    width: 6rem;
+    height: 2rem;
+    color: var(--text-main-color);
+    background-color: var(--blue-theme);
+    border: 1px solid var(--blue-theme);
+    border-radius: 3px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 0.4rem;
+    padding: 0.4rem;
+    box-shadow: none;
+}
+

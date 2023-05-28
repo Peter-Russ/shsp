@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--main-dark-color);
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    border-bottom: 1px solid var(--accent-dark-color);
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.link {
+    color: var(--text-main-color);
+    font-size: 1rem;
+    text-decoration: none;
+}
