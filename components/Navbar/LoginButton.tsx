@@ -6,7 +6,7 @@ import style from './LoginButton.module.css'
 import Link from "next/link";
 import { FiUpload } from "react-icons/fi";
 
-const LoginButton = () => {
+export default function LoginButton() {
 
   const { data: session } = useSession();
 
@@ -37,5 +37,3 @@ const LoginButton = () => {
     </div>
   );
 };
-
-export default LoginButton;

@@ -1,10 +1,12 @@
 import React from 'react'; 
+import style from './cards.module.css';
 
-const Cards = () => {
+export default function Cards() {
     return (
-    <div>Cards</div>
+    <div className={style.row}>
+        <div className={style.card}>
+            ddfda
+        </div>
+    </div>
   )
-
 }
-
-export default Cards;

@@ -7,7 +7,7 @@ import Searchbar from './Searchbar';
 
 
 
-const Navbar = () => {
+export default function Navbar() {
   return (
     <header className={style.header}>
         <Link href={"/"}>
@@ -18,5 +18,3 @@ const Navbar = () => {
     </header>
   )
 }
-
-export default Navbar;

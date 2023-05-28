@@ -2,7 +2,7 @@ import React from 'react'
 import style from './Searchbar.module.css'
 import { AiOutlineSearch } from 'react-icons/ai';
 
-const Searchbar = () => { 
+export default function Searchbar() { 
   return (
     <div className={style.row}>
         <label htmlFor="searchbox"></label>
@@ -13,5 +13,3 @@ const Searchbar = () => {
     </div>
   )
 }
-
-export default Searchbar;
