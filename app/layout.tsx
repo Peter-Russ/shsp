@@ -1,6 +1,6 @@
 import Navbar from '@components/Navbar/Navbar';
 import Provider from '@components/Provider';
-import Sidebar from '@components/Sidebar';
+import Sidebar from '@components/Sidebar/Sidebar';
 import '@styles/globals.css';
 import { Inter } from 'next/font/google';
 

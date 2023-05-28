@@ -1,6 +1,7 @@
 .row {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .loginButton {
@@ -33,5 +34,18 @@
     padding: 0.4rem;
     box-shadow: none;
     cursor: pointer;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    color: var(--text-main-color);
+    font-size: 1rem;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.span {
+    margin-left: 0.5rem;
 }
 

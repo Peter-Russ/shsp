@@ -20,7 +20,7 @@ const Sidebar = () => {
           <MdSlowMotionVideo  size={25}/> 
           <span className={style.category}>
             Shorts  
-          </span>
+          </span> 
         </Link>
         <Link href={"/"} className={style.link}>
           <AiOutlineFire  size={25}/>
