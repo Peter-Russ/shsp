@@ -23,7 +23,7 @@ body {
 main {
     display: flex;
     overflow-y: scroll;
-    flex-direction: column;
+    flex-direction: row;
     min-height: 100vh;
     overflow-y: hidden;
     overflow-x: hidden;

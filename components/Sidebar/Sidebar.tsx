@@ -6,7 +6,7 @@ import { MdSlowMotionVideo, MdOutlineVideoLibrary } from 'react-icons/md';
 import { CiStreamOn } from 'react-icons/ci';
 import { BsPeople } from 'react-icons/bs';
 
-const Sidebar = () => {
+export default function  Sidebar() {
   return (
     <aside className={style.sidebar}>
       <nav className={style.nav}>
@@ -58,6 +58,3 @@ const Sidebar = () => {
     </aside>
   )
 }
-
-
-export default Sidebar;

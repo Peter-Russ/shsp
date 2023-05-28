@@ -10,8 +10,14 @@ import Searchbar from './Searchbar';
 export default function Navbar() {
   return (
     <header className={style.header}>
-        <Link href={"/"}>
-          <Image src={"/../public/img/logo_shsp.png"} width={200} height={25} alt="logo"/>
+        <Link href={"/"} as={'image'}>
+          <Image 
+            src={"/../public/img/logo_shsp.png"} 
+            width={200} 
+            height={25} 
+            alt="logo"
+            placeholder="blur"
+            blurDataURL={'/../public/img/logo_shsp.png'}/>
         </Link>
         <Searchbar/>
         <LoginButton />
