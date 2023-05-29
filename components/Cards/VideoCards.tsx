@@ -1,12 +1,19 @@
-import React from 'react'; 
+// import React from 'react'; 
 import style from './VideoCards.module.css';
 import Image from 'next/image';
 
-export default function Cards() {
+// async function getVideos() {
+//     const videos = await fetch('http://localhost:3000/api/videos/getVideos')
+// }
+
+export default async function Cards() {
+
+    // const videos: any = getVideos();
 
     // interface oder type videos array of objects dann mit fetch holen
 
     return (
+        <>
     <div className={style.row}>
         <div className={style.card}>
             <img className={style.image} src="https://wallpapercave.com/wp/wp11491989.jpg" alt="" />
@@ -20,7 +27,7 @@ export default function Cards() {
 
             
         </div>
-        <div className={style.card}>
+        {/* <div className={style.card}>
             
         </div>
         <div className={style.card}>
@@ -47,7 +54,8 @@ export default function Cards() {
 
         <div className={style.card}>
         
-        </div>
+        </div> */}
     </div>
+    </>
   )
 }
