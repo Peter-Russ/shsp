@@ -1,9 +1,9 @@
 import React from 'react'
-import LoginButton from '@components/Navbar/LoginButton';
 import Link from 'next/link';
 import style from './Navbar.module.css';
 import Image from 'next/image';
 import Searchbar from './Searchbar';
+import UserManageHub from '@components/Navbar/UserManageHub';
 
 
 
@@ -20,7 +20,7 @@ export default function Navbar() {
             blurDataURL={'/../public/img/logo_shsp.png'}/>
         </Link>
         <Searchbar/>
-        <LoginButton />
+        <UserManageHub />
     </header>
   )
 }

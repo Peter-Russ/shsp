@@ -1,9 +1,7 @@
 import React from 'react'
 
-const UploadVideo = () => {
+export default function UploadVideo() {
   return (
     <div>Upload video</div>
   )
 }
-
-export default UploadVideo;

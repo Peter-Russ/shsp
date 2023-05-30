@@ -3,7 +3,7 @@
 import { signIn } from 'next-auth/react';
 import React, { useRef } from 'react'
 
-const LoginPage = () => {
+export default function LoginPage() {
 
     const email = useRef("");
     const password = useRef("");
@@ -25,5 +25,3 @@ const LoginPage = () => {
         </div>
     )
 }
-
-export default LoginPage;
