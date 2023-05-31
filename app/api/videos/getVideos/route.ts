@@ -1,14 +1,12 @@
-// import prisma from '@lib/prismadb';
+import prisma from '@lib/prismadb';
 
 
-// export async function GET(request: Request) {
+export async function GET(request: Request) {
 
-//       const videos: any = await prisma.video.findMany({
-//         // where: { 
+      const videos: any = await prisma.video.findMany({
+        take: 8
+      });
 
-//         // }
-//       });
+    return new Response(JSON.stringify({videos}));
 
-//     return new Response(JSON.stringify({videos}));
-
-// }
+}

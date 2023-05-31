@@ -1,5 +1,6 @@
 'use client'; // Error components must be Client components
 
+import Link from 'next/link';
 import { useEffect } from 'react';
 
 export default function Error({
@@ -16,7 +17,10 @@ export default function Error({
 
     return (
         <div>
-            <h2>Something went wrong!</h2>
+            <h2>Something went wrong! 😔</h2>
+            <Link href={"/"}>
+                <button>back home</button>
+            </Link>
         </div>
     );
 }

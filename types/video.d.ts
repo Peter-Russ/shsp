@@ -1,3 +1,9 @@
+type VideoArray = {
+  [
+    Video
+  ]
+}
+
 type Video = {
     id:              string,
     title:           string | null,
