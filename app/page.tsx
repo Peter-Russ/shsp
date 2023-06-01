@@ -1,13 +1,20 @@
-import styles from './page.module.css'
+import style from './page.module.css'
 import Cards from '@components/Cards/VideoCards'
+import prisma from '@lib/prismadb'
 
+export default async function Home() {
 
-export default function Home() {
+  const videos = await prisma.video.findMany();
+
   return (
-    <section className={styles.section}>
-      {/* @ts-expect-error Server Component */}  
-      <Cards />
-      
+    <section className={style.section}>
+      <div className={style.row}>
+        {videos.map((video) => {
+          {/* @ts-expect-error Server Component */}  
+            return <Cards {...video} />
+          }
+        )}
+      </div>
     </section>
   )
 }

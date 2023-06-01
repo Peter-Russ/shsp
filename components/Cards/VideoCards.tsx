@@ -2,37 +2,20 @@
 import style from './VideoCards.module.css';
 import Image from 'next/image';
 import prisma from '@lib/prismadb';
+import Link from 'next/link';
 
 
 
-export default async function Cards() {
-
-    // async function getVideos() {
-    //     try{
-    //         let temp: any = await fetch('http://localhost:3000/api/videos/getVideos', {method: 'GET'})
-    //         console.log(temp);
-    //         return temp;
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    
-    // }
-
-    // const videos: VideoArray = await getVideos();
-
-    const videos = await prisma.video.findMany();
-    
-
-    // interface oder type videos array of objects dann mit fetch holen
-
+export default async function Cards(video: Video) {
 
     return (
-        <>
-    <div className={style.row}>
-        {videos.map((video) => {
-            return (
+    <>
+    
             <div className={style.card}>
-                <img className={style.image} src={video.image!} alt="" />
+                <Link href={`/video/${video.id}`}>
+                    <img className={style.image} src={video.image!} alt="" />
+                </Link>
+
                 <div className={style.videoData}>
                     <img className={style.profileImg} src="https://pbs.twimg.com/profile_images/1546458449390739457/yBCOrrIR_400x400.jpg" alt="" />
                     <div>
@@ -41,38 +24,6 @@ export default async function Cards() {
                     </div>
                 </div>
             </div>
-            );
-            })}
-        
-        {/* <div className={style.card}>
-            
-        </div>
-        <div className={style.card}>
-            
-        </div>
-        <div className={style.card}>
-            
-        </div>
-        <div className={style.card}>
-            
-        </div>
-        <div className={style.card}>
-        
-        </div>
-        <div className={style.card}>
-        
-        </div>
-        <div className={style.card}>
-        
-        </div>
-        <div className={style.card}>
-        
-        </div>
-
-        <div className={style.card}>
-        
-        </div> */}
-    </div>
     </>
   )
 }
