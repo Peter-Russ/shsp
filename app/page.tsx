@@ -11,7 +11,7 @@ export default async function Home() {
       <div className={style.row}>
         {videos.map((video) => {
           {/* @ts-expect-error Server Component */}  
-            return <Cards {...video} />
+            return <Cards key={video.id} { ...video} />
           }
         )}
       </div>

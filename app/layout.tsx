@@ -1,10 +1,10 @@
 import Navbar from '@components/Navbar/Navbar';
-import Provider from '@components/Provider';
+import SessionProvider from '@components/Provider';
 import Sidebar from '@components/Sidebar/Sidebar';
 import '@styles/globals.css';
-import { Inter } from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Open_Sans({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Social Media',
@@ -19,13 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Provider>
+        <SessionProvider>
         <Navbar />
           <main>
             <Sidebar/>
             {children}
           </main>
-        </Provider>
+        </SessionProvider>
       </body>
     </html>
   )

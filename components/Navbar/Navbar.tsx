@@ -3,7 +3,8 @@ import Link from 'next/link';
 import style from './Navbar.module.css';
 import Image from 'next/image';
 import Searchbar from './Searchbar';
-import UserManageHub from '@components/Navbar/UserManageHub';
+import UserManageHub from './UserManageHub';
+import UploadButton from './UploadButton';
 
 
 
@@ -20,7 +21,10 @@ export default function Navbar() {
             blurDataURL={'/../public/img/logo_shsp.png'}/>
         </Link>
         <Searchbar/>
-        <UserManageHub />
+        <div className={style.row}>
+          <UploadButton />
+          <UserManageHub />
+        </div>
     </header>
   )
 }
