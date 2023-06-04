@@ -1,10 +1,11 @@
-import React from 'react'
-import style from './Sidebar.module.css'
+import React from 'react';
+import style from './Sidebar.module.css';
 import Link from 'next/link';
 import { AiOutlineHome, AiOutlineHistory, AiOutlineFire } from 'react-icons/ai';
 import { MdSlowMotionVideo, MdOutlineVideoLibrary } from 'react-icons/md';
 import { CiStreamOn } from 'react-icons/ci';
 import { BsPeople } from 'react-icons/bs';
+import SubscribedUsers from './Components/SubscribedUsers';
 
 export default function  Sidebar() {
   return (
@@ -54,6 +55,8 @@ export default function  Sidebar() {
           </span> 
         </Link>
         <hr className={style.hr}/>
+         {/* @ts-expect-error Server Component */} 
+        <SubscribedUsers />
       </nav>
     </aside>
   )

@@ -1,0 +1,12 @@
+.loginContainer {
+    margin: 5% auto auto 30%;
+    display: flex;
+    flex-direction: column;
+    height: max(600px, 100px);
+    width: max(400px, 75px);
+    background-color: var(--accent-dark-color);
+    border-radius: 15px;
+    align-items: center;
+    justify-content: space-around;
+
+}

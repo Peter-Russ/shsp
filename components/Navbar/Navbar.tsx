@@ -2,9 +2,9 @@ import React from 'react'
 import Link from 'next/link';
 import style from './Navbar.module.css';
 import Image from 'next/image';
-import Searchbar from './Searchbar';
-import UserManageHub from './UserManageHub';
-import UploadButton from './UploadButton';
+import Searchbar from './Components/Searchbar';
+import UserManageHub from './Components/UserManageHub';
+import UploadButton from './Components/UploadButton';
 
 
 

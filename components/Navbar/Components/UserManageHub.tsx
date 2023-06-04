@@ -11,9 +11,9 @@ export default function UserManageHub() {
 
   const { data: session, status } = useSession();
 
-  if (status === "loading") {
-    return <></>;
-  }
+  // if (status === "loading") {
+  //   return <></>;
+  // }
 
   if (status === "authenticated" && session && session.user) {
     return (
