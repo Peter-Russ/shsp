@@ -1,4 +1,5 @@
 import prisma from '@lib/prismadb';
+import { NextResponse } from 'next/server';
 
 
 export async function GET(request: Request) {
@@ -7,6 +8,6 @@ export async function GET(request: Request) {
         take: 8
       });
 
-    return new Response(JSON.stringify({videos}));
+    return NextResponse.json(videos);
 
 }

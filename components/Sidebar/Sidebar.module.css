@@ -1,16 +1,18 @@
 .sidebar {
     height: 100%;
     width: 220px;
+    min-width: 220px;
     overflow-y: hidden;
-    display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
+
 .sidebar:hover {
     overflow-y: overlay;
 }
 .sidebar::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
+	border-radius: 15px;
 	background-color: var(--main-dark-color);
 }
 .sidebar::-webkit-scrollbar {
@@ -18,7 +20,7 @@
 	background-color: var(--main-dark-color);
 }
 .sidebar::-webkit-scrollbar-thumb {
-	border-radius: 10px;
+	border-radius: 15px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: var(--accent-dark-color);
 }
@@ -33,11 +35,17 @@
     color: var(--text-main-color);
     display: flex;
     align-items: center;
-    padding: 0.6rem 0 0.6rem 1.5rem;
+    margin: 0.2rem 0.4rem 0.2rem 0.4rem;
+    padding: 0.4rem 0 0.4rem 1.1rem;
+}
+
+.link:hover {
+    background-color: var(--accent-hover-color);
+    border-radius: 10px;
 }
 
 .link:first-child {
-    padding-top: 1rem;
+    margin-top: 1rem;
 }
 
 .category {

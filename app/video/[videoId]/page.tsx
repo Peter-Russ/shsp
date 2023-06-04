@@ -7,6 +7,11 @@ interface Props {
     }
 }
 
+// export async function generateMetadata({ params }: Props): Promise<Metadata> {
+//     const user = await prisma.user.findUnique({ where: { id: params.id } });
+//     return { title: `User profile of ${user?.name}` };
+// }
+
 export default async function VideoPlayer({params}: Props) {
     
     const foundVideo: any = await prisma.video.findUnique({ where: { id: params.videoId } });

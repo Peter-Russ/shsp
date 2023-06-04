@@ -1,5 +1,5 @@
 import Navbar from '@components/Navbar/Navbar';
-import SessionProvider from '@components/Provider';
+import SessionProvider from '@components/SessionProvider';
 import Sidebar from '@components/Sidebar/Sidebar';
 import '@styles/globals.css';
 import { Open_Sans } from 'next/font/google';
@@ -23,8 +23,10 @@ export default function RootLayout({
         <Navbar />
           <main>
             <Sidebar/>
-            {children}
-          </main>
+            <div className="content">
+              {children}
+            </div>
+          </main> 
         </SessionProvider>
       </body>
     </html>
